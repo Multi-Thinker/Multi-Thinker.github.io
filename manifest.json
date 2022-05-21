@@ -1,0 +1,31 @@
+{
+  "background_color": "#57B059",
+  "description": "Talha Habib (nickname Multi Thinker) is a full-stack React/JS Software Engineer and Directory of Engineering Born and Raised in Pakistan.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Talha Habib",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Talha Habib",
+  "start_url": "/",
+  "theme_color": "#57B059",
+  "icons": [
+    {
+      "src": "/images/512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-2.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/screenshot-1.png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    }
+  ]
+}

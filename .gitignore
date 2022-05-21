@@ -1,0 +1,5 @@
+*.ai
+*.svg
+.vscode
+.history
+.DS_Store
