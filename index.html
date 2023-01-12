@@ -32,6 +32,9 @@
     document.body.appendChild(el);
   </script>
   <style>
+    :root {
+      --app-height: 100vh;
+  }
     @import "https://fonts.googleapis.com/css?family=Inconsolata";
     @import url(https://fonts.googleapis.com/css?family=Exo+2:300,400,500,600);
 
@@ -100,7 +103,7 @@
       top: 0;
       color: transparent;
       background: transparent;
-      overflow: hidden;
+      overflow: visible;
       clip: rect(0, 900px, 0, 0);
       -webkit-animation: noise-anim-2 3s infinite linear alternate-reverse, shift 4s ease-in-out infinite alternate;
       animation: noise-anim-2 3s infinite linear alternate-reverse, shift 4s ease-in-out infinite alternate;
@@ -117,7 +120,7 @@
       top: 0;
       color: transparent;
       background: transparent;
-      overflow: hidden;
+      overflow: visible;
       clip: rect(0, 900px, 0, 0);
       -webkit-animation: noise-anim-2 3s infinite linear alternate-reverse, shift 4s ease-in-out infinite alternate;
       animation: noise-anim-2 3s infinite linear alternate-reverse, shift 4s ease-in-out infinite alternate;
@@ -557,12 +560,14 @@
     }
 
     html {
-      min-height: 100vh;
+      max-height: -webkit-fill-available;
+      height: calc(var(--app-height, 1vh) * 1);
     }
 
     body {
       box-sizing: border-box;
-      height: 100vh;
+      max-height: -webkit-fill-available;
+      height: calc(var(--app-height, 1vh) * 1);
       padding-bottom: 20px;
       background-color: #000000;
       background-image: radial-gradient(#11581e, #041607), url("./giphy.webp");
@@ -578,10 +583,8 @@
       pointer-events: none;
       position: absolute;
       width: 100%;
-      height: 100%;
+      height: calc(var(--app-height, 1vh) * 1);
       background-image: url("./giphy.webp");
-      background-repeat: no-repeat;
-      background-size: cover;
       z-index: -1;
       opacity: 0.02;
     }
@@ -590,10 +593,13 @@
       pointer-events: none;
       position: absolute;
       width: 100%;
-      height: 100%;
+      top:0; 
+      left:0;
+      height: var(--app-height);
       background: repeating-linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
       background-size: auto 4px;
       z-index: 1;
+      overflow:hidden
     }
 
     .overlay::before {
@@ -603,42 +609,39 @@
       display: block;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
       width: 100%;
-      height: 100%;
+      height: calc(var(--app-height, 100vh) * 1);
       background-image: linear-gradient(0deg, transparent 0%, rgba(32, 128, 32, 0.2) 2%, rgba(32, 128, 32, 0.8) 3%, rgba(32, 128, 32, 0.2) 3%, transparent 100%);
       background-repeat: no-repeat;
       -webkit-animation: scan 7.5s linear 0s infinite;
       animation: scan 7.5s linear 0s infinite;
+      overflow:visible;
     }
 
     @-webkit-keyframes scan {
       0% {
-        background-position: 0 -100vh;
+        background-position: 0 calc(var(--app-height) * -1);
       }
 
-      35%,
-      100% {
-        background-position: 0 100vh;
+      35%, 100% {
+        background-position: 0 calc(var(--app-height) * 1)
       }
     }
 
     @keyframes scan {
       0% {
-        background-position: 0 -100vh;
+        background-position: 0 calc(var(--app-height) * -1);
       }
 
-      35%,
-      100% {
-        background-position: 0 100vh;
+      35%, 100% {
+        background-position: 0 calc(var(--app-height) * 1);
       }
     }
 
     .terminal {
       box-sizing: inherit;
       position: absolute;
-      height: 100vh;
+      height: calc(var(--app-height, 1vh) * 1);
       width: 100%;
       max-width: 100%;
       padding: 4rem;
@@ -752,8 +755,9 @@
 </head>
 
 <body>
+   <div class="overlay"></div>
   <div class="noise"></div>
-  <div class="overlay"></div>
+
   <div class="terminal">
     <div class="wrap-main">
       <pre style="position:relative;font-size:3px; top:10px; right:10px; letter-spacing:1.3px">
@@ -882,12 +886,13 @@
           <h2></h2>
         </div>
         <p class="output">
-           Talha is a full-stack JavaScript Engineer by skills with 10+ years of experience, 
-           currently Director of Engineering for Dirayaah, ZadGroup and ZidoWorld, Engineering Manager for Hotel Engine, a Toptal and Andela Talent.<br />
-           Some of the technologies he worked with include React, Next.js, MongoDB, PostgreSQL, Express, Elasticsearch, AWS/GWS, and Google Maps.
-            He contributed and raised rental marketplace called Lighthouse as the first-hire lead engineer and engineering manager switching to multiple roles tending to startup need,
-            managed range of tech departments each with a team of 10 or more people. 
-            Talha was also in charge of maintaining and upgrading client-facing apps while leading the team goals to the next level.
+          <a href="https://www.linkedin.com/in/imultithinker/" href="_blank">Talha</a> is a full-stack JavaScript Engineer & Engineering Manager with 10+ years of experience, 
+           currently Director of Engineering for <a href="https://www.linkedin.com/company/dirayaah" target="_blank">Dirayaah</a> a subsidiary to <a href="https://www.linkedin.com/company/zad-group-company/" target="_blank">Zad Group</a>, and Engineering Manager for <a href"https://www.linkedin.com/company/hotel-engine" target="_blank">Hotel Engine</a>, he is also a 
+          <a target="_blank" href="https://www.toptal.com/resume/talha-habib">Toptal</a> and <a target="_blank" href="https://andela.com">Andela</a> Talent.<br /></p><p class="output">
+           Some of the technologies he has worked with includes Node.js, Next.js, SQL/noSQL DBs, Elasticsearch, AWS/GWS, and Google Maps.
+            Recently he contributed and raised rental marketplace called <a href="https://lighthouse.app" target="_blank">Lighthouse</a> as the founding member and lead engineer, ocassionaly engineering manager -- switching to multiple roles as per startup need</p>
+        <p>
+            He's usually roled to be hands-on manager to a range of tech/non-tech diverse teams & projects since 5+ years
           </p>
         <p class="output">Click on the links to see the information you're looking for</p>
         <p class="output"><a href="#experiments" class="toggle experiment">Experiments</a> or <a href="#aboutme"
@@ -909,7 +914,7 @@
             <a target="_blank" href="mailto:talhahabib00@gmail.com">Email</a>
           </p>
         </div>
-        <p class="output">Want to talk to me? <a href="https://calendly.com/talha-habib/60min" target="_blank">Book a
+        <p class="output">Schedule a call? <a href="https://calendly.com/talha-habib/60min" target="_blank">Book a
           calendly slot</a></p>
       </div>
     </div>
@@ -923,6 +928,12 @@
   gtag('js', new Date());
 
   gtag('config', 'G-1PQ8EF5FQS');
+  
+  const appHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty('--app-height', `${window.outerHeight + (window.innerWidth >= 1000 ? 0 : window.innerWidth)}px`)
+}
+window.addEventListener('resize', appHeight)
+appHeight()
 </script>
-
 </html>
