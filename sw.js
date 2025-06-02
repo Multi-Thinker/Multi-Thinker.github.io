@@ -1,6 +1,6 @@
 const CACHE_NAME = 'talhahabib-portfolio-v1';
 const urlsToCache = [
-  '/favicon.ico',
+  '/favicon.png',
   '/',
   '/index.html',
   '/manifest.webmanifest',
