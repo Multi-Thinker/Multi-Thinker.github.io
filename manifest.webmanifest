@@ -1,0 +1,22 @@
+{
+  "name": "Talha Habib Portfolio",
+  "short_name": "TalhaHabib",
+  "description": "Talha Habib's Programming Portfolio and JavaScript Blog",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#222222",
+  "theme_color": "#C75143",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

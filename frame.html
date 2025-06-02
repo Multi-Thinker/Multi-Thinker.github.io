@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./assets/styles/m.css">
+  <style>
+    .container {
+      width: 100vw !important;
+      height: 100vh !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+      position: relative;
+    }
+
+    body,
+    html,
+    canvas {
+      background: transparent !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      /* No transform: scale()! */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container"></div>
+  <script src="./assets/scripts/m2.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const canvas = document.querySelector('canvas');
+      if (canvas) {
+        // Set buffer size to fill viewport
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        // Optionally, set style to 100% as well
+        canvas.style.width = '100vw';
+        canvas.style.height = '100vh';
+      }
+    });
+  </script>
+</body>
+
+</html>
